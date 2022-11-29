@@ -53,22 +53,40 @@ class HandleCollisionsAction(Action):
         Args:
             cast (Cast): The cast of Actors in the game.
         """
-        snakes = cast.get_actors("snakes")
-        snake0 = snakes[0]
+        snake0 = cast.get_actor("snakes", 0)
+        snake1 = cast.get_actor("snakes", 1)
+
         head0 = snake0.get_segments()[0]
-        segments0 = snake0.get_segments()[1:]
-        
-        snake1 = snakes[1]
         head1 = snake1.get_segments()[0]
+
+        segments0 = snake0.get_segments()[1:]
         segments1 = snake1.get_segments()[1:]
 
         segments = segments0 + segments1
-
         for segment in segments:
             if head0.get_position().equals(segment.get_position()):
                 self._is_game_over = True
             elif head1.get_position().equals(segment.get_position()):
                 self._is_game_over = True
+
+
+
+        # snakes = cast.get_actors("snakes")
+        # snake0 = snakes[0]
+        # head0 = snake0.get_segments()[0]
+        # segments0 = snake0.get_segments()[1:]
+        
+        # snake1 = snakes[1]
+        # head1 = snake1.get_segments()[0]
+        # segments1 = snake1.get_segments()[1:]
+
+        # segments = segments0 + segments1
+
+        # for segment in segments:
+        #     if head0.get_position().equals(segment.get_position()):
+        #         self._is_game_over = True
+        #     elif head1.get_position().equals(segment.get_position()):
+        #         self._is_game_over = True
         
     def _handle_game_over(self, cast):
         """Shows the 'game over' message and turns the snake and food white if the game is over.
@@ -97,3 +115,11 @@ class HandleCollisionsAction(Action):
             for segment in segments:
                 segment.set_color(constants.WHITE)
             #food.set_color(constants.WHITE)
+
+    def get_game_over(self):
+        """Returns if the game is over or not.
+        
+        Return:
+            Bool: if game is over or not.
+        """
+        return self._is_game_over

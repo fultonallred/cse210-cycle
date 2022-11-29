@@ -1,9 +1,10 @@
 import constants
 
 from game.casting.cast import Cast
-from game.casting.food import Food
-from game.casting.score import Score
+#from game.casting.food import Food
+#from game.casting.score import Score
 from game.casting.snake import Snake
+from game.casting.snake1 import Snake1
 from game.scripting.script import Script
 from game.scripting.control_snake0_action import ControlSnake0Action
 from game.scripting.control_snake1_action import ControlSnake1Action
@@ -24,8 +25,8 @@ def main():
     cast = Cast()
     #cast.add_actor("foods", Food())
     cast.add_actor("snakes", Snake()) # Player 0
-    cast.add_actor("snakes", Snake()) # Player 1
-    cast.add_actor("scores", Score())
+    cast.add_actor("snakes", Snake1()) # Player 1d
+    #cast.add_actor("scores", Score())
    
     # start the game
     keyboard_service = KeyboardService()

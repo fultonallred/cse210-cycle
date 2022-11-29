@@ -35,8 +35,10 @@ class Cast:
         Returns:
             Class: the specific actor in the group."""
 
-        actor = self._actors[group][index]
-        return actor
+        result = None
+        if group in self._actors.keys():
+            result = self._actors[group][index]
+        return result
 
     def get_actors(self, group):
         """Gets the actors in the given group.
