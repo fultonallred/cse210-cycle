@@ -13,6 +13,14 @@ class Snake(Actor):
         _points (int): The number of points the food is worth.
     """
     def __init__(self):
+        """Constructs a new instance of Snake.
+        
+        Args:
+            Actor: The parent class
+        Attributes:
+            segments (list): a list of Actors
+        """
+
         super().__init__()
         self._segments = []
         self._prepare_body()
@@ -35,6 +43,9 @@ class Snake(Actor):
         return self._segments[0]
 
     def grow_tail(self, number_of_segments):
+        """Grows tail by segments equal to the point value of food consumed.
+        """
+
         for i in range(number_of_segments):
             tail = self._segments[-1]
             velocity = tail.get_velocity()
@@ -52,6 +63,9 @@ class Snake(Actor):
         self._segments[0].set_velocity(velocity)
     
     def _prepare_body(self):
+        """Method called in constructor to add segments.
+        """
+        
         x = int(constants.MAX_X / 2 - 300)
         y = int(constants.MAX_Y / 2)
 
