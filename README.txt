@@ -16,6 +16,6 @@ root				(project root folder)
 		- scripting	(actions for actors to take)
 		- services	(input/output)
 		- shared	(shared classes)
-	- __main__.py
-	- constants.py
+	- __main__.py		(game entry point)
+	- constants.py		(values utilized by classes)
 - README.txt
