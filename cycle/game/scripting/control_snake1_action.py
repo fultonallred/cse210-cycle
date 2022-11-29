@@ -1,9 +1,9 @@
 import constants
-from game.scripting.action import Action
+from game.scripting.control_snake0_action import ControlSnake0Action
 from game.shared.point import Point
 
 
-class ControlSnake1Action(Action):
+class ControlSnake1Action(ControlSnake0Action):
     """
     An input action that controls the snake.
     
@@ -19,8 +19,7 @@ class ControlSnake1Action(Action):
         Args:
             keyboard_service (KeyboardService): An instance of KeyboardService.
         """
-        self._keyboard_service = keyboard_service
-        self._direction = Point(0, -constants.CELL_SIZE)
+        super().__init__()
 
     def execute(self, cast, script):
         """Executes the control actors action.
