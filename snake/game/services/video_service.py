@@ -42,7 +42,7 @@ class VideoService:
 
         if centered:
             width = pyray.measure_text(text, font_size)
-            offset = int(width / 2)
+            offset = int(width)
             x -= offset
             
         pyray.draw_text(text, x, y, font_size, color)

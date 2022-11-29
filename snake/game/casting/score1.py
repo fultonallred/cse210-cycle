@@ -1,9 +1,11 @@
-from game.casting.actor import Actor
+from game.casting.score import Score
+import constants
+from game.shared.point import Point
 
 
-class Score(Actor):
+class Score1(Score):
     """
-    A record of points made or lost for Player 1. 
+    A record of points made or lost for player 2. 
     
     The responsibility of Score is to keep track of the points the player has earned by eating food.
     It contains methods for adding and getting points. Client should use get_text() to get a string 
@@ -16,6 +18,7 @@ class Score(Actor):
         super().__init__()
         self._points = 0
         self.add_points(0)
+        self.set_position(Point(constants.MAX_X - 1, 0))
 
     def add_points(self, points):
         """Adds the given points to the score's total points.
@@ -24,7 +27,7 @@ class Score(Actor):
             points (int): The points to add.
         """
         self._points += points
-        self.set_text(f"Player 1 Score: {self._points}")
+        self.set_text(f"Player 2 Score: {self._points}")
 
     def get_points(self):
 

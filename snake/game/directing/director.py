@@ -1,3 +1,7 @@
+from game.shared.point import Point
+import pyray
+import constants
+
 class Director:
     """A person who directs the game. 
     
