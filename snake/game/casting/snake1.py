@@ -9,6 +9,9 @@ class Snake1(Snake):
     """
     
     def grow_tail(self, number_of_segments):
+        """Grows tail by segments equal to the point value of food consumed.
+        """
+        
         for i in range(number_of_segments):
             tail = self._segments[-1]
             velocity = tail.get_velocity()
